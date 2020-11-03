@@ -27,10 +27,10 @@ async function run() {
     await Promise.all(
       trees.map(tree => {
         return client.query(`
-                    INSERT INTO trees (name, hardness_factor, owner_id)
-                    VALUES ($1, $2, $3);
+                    INSERT INTO trees (name, hardness_factor, hardwood, type, owner_id)
+                    VALUES ($1, $2, $3, $4, $5);
                 `,
-          [tree.name, tree.hardness_factor, user.id]);
+          [tree.name, tree.hardness_factor, tree.hardwood, tree.type, user.id]);
       })
     );
 

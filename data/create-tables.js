@@ -21,6 +21,8 @@ async function run() {
                     id SERIAL PRIMARY KEY NOT NULL,
                     name VARCHAR(512) NOT NULL,
                     hardness_factor INTEGER NOT NULL,
+                    hardwood BOOLEAN,
+                    type VARCHAR(512),
                     owner_id INTEGER NOT NULL REFERENCES users(id)
             );
         `);
