@@ -158,5 +158,45 @@ describe('app routes', () => {
       expect(data.body).toEqual(expectation);
       expect(allTrees.body.length).toEqual(9);
     });
+
+    test('updates a single tree in the db', async () => {
+      const expectation =
+      {
+        id: 1,
+        name: 'Fir',
+        hardness_factor: 5,
+        hardwood: false,
+        type: 'coniferous',
+        owner_id: 1,
+      }
+        ;
+
+      const data = await fakeRequest(app)
+        .put('/trees/1')
+        .send(expectation);
+      await fakeRequest(app)
+        .get('/trees/1')
+        .expect('Content-Type', /json/)
+        .expect(200);
+
+      expect(data.body).toEqual(expectation);
+    });
+
+    test('deletes a single tree from the db', async () => {
+      const expectation = '';
+
+      const deletedTree = await fakeRequest(app)
+        .delete('/trees/1')
+        .expect('Content-Type', /json/)
+        .expect(200);
+
+      const data = await fakeRequest(app)
+        .get('/trees/')
+        .expect('Content-Type', /json/)
+        .expect(200);
+
+      expect(deletedTree.body).toEqual(expectation);
+      expect(data.body.length).toEqual(8);
+    });
   });
 });
