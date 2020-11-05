@@ -17,7 +17,7 @@ async function run() {
         return client.query(`
                       INSERT INTO users (email, hash)
                       VALUES ($1, $2)
-                      RETURNING *;
+                      RETURNING *
                   `,
           [user.email, user.hash]);
       })
@@ -29,8 +29,8 @@ async function run() {
       types.map(item => {
         return client.query(`
                     INSERT INTO types (type)
-                    VALUES ($1);
-                    RETURNING *;
+                    VALUES ($1)
+                    RETURNING *
                 `,
           [item.type]);
       })

@@ -39,7 +39,7 @@ describe('app routes', () => {
           name: 'fir',
           hardness_factor: 5,
           hardwood: false,
-          type: 'coniferous',
+          type_id: 1,
           owner_id: 1,
         },
         {
@@ -47,7 +47,7 @@ describe('app routes', () => {
           name: 'maple',
           hardness_factor: 8,
           hardwood: true,
-          type: 'deciduous',
+          type_id: 2,
           owner_id: 1,
         },
         {
@@ -55,7 +55,7 @@ describe('app routes', () => {
           name: 'oak',
           hardness_factor: 10,
           hardwood: true,
-          type: 'deciduous',
+          type_id: 2,
           owner_id: 1,
         },
         {
@@ -63,7 +63,7 @@ describe('app routes', () => {
           name: 'cedar',
           hardness_factor: 6,
           hardwood: false,
-          type: 'coniferous',
+          type_id: 1,
           owner_id: 1,
         },
         {
@@ -71,7 +71,7 @@ describe('app routes', () => {
           name: 'spruce',
           hardness_factor: 4,
           hardwood: false,
-          type: 'coniferous',
+          type_id: 1,
           owner_id: 1,
         },
         {
@@ -79,7 +79,7 @@ describe('app routes', () => {
           name: 'pine',
           hardness_factor: 5,
           hardwood: false,
-          type: 'coniferous',
+          type_id: 1,
           owner_id: 1,
         },
         {
@@ -87,7 +87,7 @@ describe('app routes', () => {
           name: 'mahogany',
           hardness_factor: 7,
           hardwood: true,
-          type: 'deciduous',
+          type_id: 2,
           owner_id: 1,
         },
         {
@@ -95,7 +95,7 @@ describe('app routes', () => {
           name: 'ebony',
           hardness_factor: 9,
           hardwood: true,
-          type: 'deciduous',
+          type_id: 2,
           owner_id: 1,
         }
       ];
@@ -116,7 +116,6 @@ describe('app routes', () => {
         hardness_factor: 5,
         hardwood: false,
         type: 'coniferous',
-        owner_id: 1
       };
 
       const data = await fakeRequest(app)
@@ -133,7 +132,7 @@ describe('app routes', () => {
         name: 'cherry',
         hardness_factor: 7,
         hardwood: true,
-        type_id: 'deciduous',
+        type_id: 2,
         owner_id: 1
       };
 
@@ -166,7 +165,7 @@ describe('app routes', () => {
         name: 'Fir',
         hardness_factor: 5,
         hardwood: false,
-        type: 'coniferous',
+        type_id: 1,
         owner_id: 1,
       }
         ;
