@@ -17,12 +17,16 @@ async function run() {
                     email VARCHAR(256) NOT NULL,
                     hash VARCHAR(512) NOT NULL
                 );           
+                CREATE TABLE types (
+                  id SERIAL PRIMARY KEY,
+                  type VARCHAR(256) NOT NULL
+              );      
                 CREATE TABLE trees (
                     id SERIAL PRIMARY KEY NOT NULL,
                     name VARCHAR(512) NOT NULL,
                     hardness_factor INTEGER NOT NULL,
                     hardwood BOOLEAN,
-                    type VARCHAR(512),
+                    type_id INTEGER NOT NULL REFERENCES types(id),
                     owner_id INTEGER NOT NULL REFERENCES users(id)
             );
         `);
