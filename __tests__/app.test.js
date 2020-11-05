@@ -133,7 +133,7 @@ describe('app routes', () => {
         name: 'cherry',
         hardness_factor: 7,
         hardwood: true,
-        type: 'deciduous',
+        type_id: 'deciduous',
         owner_id: 1
       };
 
@@ -143,7 +143,7 @@ describe('app routes', () => {
           name: 'cherry',
           hardness_factor: 7,
           hardwood: true,
-          type: 'deciduous',
+          type_id: 2,
           owner_id: 1
         })
         .expect('Content-Type', /json/)
